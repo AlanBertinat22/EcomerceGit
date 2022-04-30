@@ -3,6 +3,8 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
+// Con este modulo podemos enviar mensajes entre multiples vistas
+const flash = require('connect-flash');
 
 // Initializations
 const app = express();
@@ -10,9 +12,8 @@ require('./database');
 
 // Settings
 app.set('port', process.env.PORT || 3000);
-
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs.engine({
+app.engine('.hbs', exphbs.engine({ 
     defaultLayout: 'main',
     layautsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
@@ -30,7 +31,18 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.use(flash());
+
 // Global Variables
+// Creo una variable global para mostrar mensajes sin importar la vista a la que voy, para poder acceder a un mensaje siempre
+app.use((req, res, next)=>{
+    app.locals.success_msg = req.flash('success_msg')
+    //res.locals.error_msg = req.flash('error_msg');
+    next();
+  });
+
+
+
 
 // Routes
 app.use(require('./routes/index'));
