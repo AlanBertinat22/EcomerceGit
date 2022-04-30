@@ -1,0 +1,34 @@
+{
+  "name": "ecomercegit",
+  "version": "1.0.0",
+  "description": "Aprendiendo git - github con react y nodejs.\r La idea es aprender los fundamentos basicos de control de versiones, aprender reactjs y poder darle backend con nodejs, una vez agarre forma ir \r llevandolo mas a algo real",
+  "main": "app.js",
+  "scripts": {
+  "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com/AlanBertinat22/EcomerceGit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanBertinat22/EcomerceGit/issues"
+  },
+  "homepage": "https://github.com/AlanBertinat22/EcomerceGit#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.10",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

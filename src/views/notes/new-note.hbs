@@ -1,0 +1,34 @@
+{{#each errors}}
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+        <use xlink:href="#exclamation-triangle-fill" />
+    </svg>
+    <div>
+        {{text}}
+    </div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h1>New note</h1>
+        </div>
+        <div class="card-body">
+            <form action="/notes/new-note" method="post">
+                <div class="form-group">
+                    <input autofocus type="text" name="title" class="form-control" placeholder="Title">
+                </div>
+                <div class="form-group mt-2">
+                    <textarea name="description" class="form-control" placeholder="Description"></textarea>
+                </div>
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary " type="submit">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
