@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const { request } = require('express');
 // obtengo la ruta donde definí el schema para la base de datos.
 // Al crear un schema, es como crear una clase, la misma se tendrá que instanciar
 // para luego poder ser utilizada para insertar, modificar o borrar.
@@ -53,12 +54,14 @@ router.get('/notes/edit/:id', async (req, res) => {
 router.put('/notes/edit-note/:id', async (req, res) => {
     const { title, description } = req.body;
     const note = await Note.findByIdAndUpdate(req.params.id, { title, description });
+    req.flash('success_msg', 'Nota actualizada correctamente.');
     res.redirect('/notes');
 });
 
 // Aca definimos el delete de la respectiva card que se desea borrar
 router.delete('/notes/delete/:id', async (req, res) => {
     await Note.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Nota borrada satisfactoriamente.');
     res.redirect('/notes');
 });
 
