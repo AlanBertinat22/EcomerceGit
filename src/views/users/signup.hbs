@@ -1,8 +1,29 @@
-<div type="form">
-    <p>Registrarse manualmente</p>
-    <label for="signup"> E-mail</label>
-    <input type="text">
-    <label for="signup"> Contraseña</label>
-    <input type="password">
-    <button type="submit"> Registrarse</button>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Registro de usuario!
+            </div>
+            <div class="card-body">
+                <form action="/users/signup" method="POST">
+                    <div class="form-group mt-2">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" class="form-control" name="confirmpassword"
+                            placeholder="Confirme contraseña" value="{{confirmpassword}}">
+                    </div>
+                    <div class="form-group col-12 mt-2">
+                        <button type="submit" class="btn btn-primary form-control"> Registrarse </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
