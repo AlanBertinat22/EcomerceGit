@@ -1,9 +1,23 @@
-<div type="form">
-    <h1>Bienvenidos</h1>
-    <p>Iniciar sesión</p>
-    <label for="signup"> E-mail</label>
-    <input type="text">
-    <label for="signup"> Contraseña</label>
-    <input type="password">
-    <button type="submit"> Ingresar</button>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card mt-4 text-center">
+            <div class="card-header">
+                <h1>Inicio de Sesión</h1>
+            </div>
+            <img class="rounded-circle mx-auto d-block m-2 logo" src="/img/logo-signin.jpg" alt="Logo">
+            <div class="card-body">
+                <form action="/users/signin" method="POST">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" autofocus>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-primary col-12 form-control"> Ingresar </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

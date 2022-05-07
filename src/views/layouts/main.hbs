@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <p>Navegación</p>
+    {{> navegation}}
 
-    <main class="container">
+    <main class="container p-4">
         <!-- Acá indico que lo unico que va a cambiar es el body -->
 
         <!-- Invoco el partial, en este caso el que muestra mensaje de ok o de error-->
@@ -26,9 +26,7 @@
         {{{ body }}}
     </main>
 
-    <div class="footer">
-        <Footer> Pie de pagiNa</Footer>
-    </div>
+    {{> footer}}
 
     <!-- SCRIPTS -->
     <!-- BOOTSTRAP VERSION 5.2  DE JS-->
